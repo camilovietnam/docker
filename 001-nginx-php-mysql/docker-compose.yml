@@ -1,0 +1,10 @@
+services: 
+  laravel:
+    build: 
+      context: .
+      dockerfile: laravel.Dockerfile
+    container_name: laravel
+    ports:
+      - "5432:80"
+    volumes:
+        - ~/erase/digitarum:/var/www/html
