@@ -1,6 +1,7 @@
 # Container for a basic Laravel project
 Edit the file docker-compose.yaml to direct the mounted volume to the local folder with your Laravel code.
 
+Example: 
 ```
   volumes:
     - ~/laravel_project:/var/www/html
