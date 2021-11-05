@@ -8,4 +8,4 @@ Edit the file docker-compose.yaml to direct the mounted volume to the local fold
 
 Then run the `docker-compose up` command.
 
-You should also change the name of the containers as the default names (laravel, mysql) might conflict with other containers you are running 
+You should also change the name of the containers as the default names (laravel, mysql) might conflict with other containers you are running.
