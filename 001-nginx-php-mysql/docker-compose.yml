@@ -7,4 +7,12 @@ services:
     ports:
       - "5432:80"
     volumes:
-        - ~/erase/digitarum:/var/www/html
+      - ${LARAVEL_DIR}:/var/www/html
+    networks:
+      - 001-network
+    env_file:
+      .env
+
+networks:
+  001-network:
+    name: 001-network
