@@ -1,0 +1,32 @@
+services: 
+  phpgeneric_web:
+    build: 
+      context: .
+      dockerfile: phpgeneric.Dockerfile
+    container_name: phpgeneric_web
+    ports:
+      - "5432:80"
+    volumes:
+      - ${PROJECT_DIR}:/var/www/html
+    networks:
+      - phpgeneric
+    env_file:
+      .env
+  phpgeneric_db:
+    image: mariadb:latest
+    container_name: phpgeneric_db
+    ports:
+      - "33306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=phpgeneric
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_HOST=%
+    networks:
+      - phpgeneric
+networks:
+  phpgeneric:
+    name: phpgeneric
